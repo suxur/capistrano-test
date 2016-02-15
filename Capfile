@@ -8,7 +8,7 @@ require 'capistrano/deploy'
 require 'rubygems'
 require 'capistrano/laravel'
 
-load 'config/deploy.rb' if response_to?(:namespace)
+load 'config/deploy.rb'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
