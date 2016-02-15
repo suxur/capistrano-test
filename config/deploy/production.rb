@@ -25,8 +25,6 @@ set :shared_children,   ["storage", "vendor", ".env"]
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
-ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
-
 #after "deploy:update", "deploy:cleanup"
 
 #before "deploy:create_symlink", "deploy:composer_install"
@@ -41,11 +39,11 @@ ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
 #
 # Global options
 # --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
+set :ssh_options, {
+    keys: [File.join(ENV["HOME"], ".ssh", "id_rsa")]
 #    forward_agent: false,
 #    auth_methods: %w(password)
-#  }
+}
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
