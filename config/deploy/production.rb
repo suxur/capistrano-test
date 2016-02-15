@@ -16,7 +16,7 @@ server '192.81.213.83', user: 'teamcity', group: 'deploy'
 set :copy_exclude, [ '.git' ]
 
 
-set :branch, "master"
+set :branch, ENV["REVISION"] || ENV["BRANCH_NAME"] || "master"
 set :deploy_to, "/var/www/capistrano-test"
 
 set :shared_children,   ["storage", "vendor", ".env"]
