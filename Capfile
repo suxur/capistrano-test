@@ -6,7 +6,7 @@ require 'capistrano/deploy'
 
 # Include tasks from other gems included in your Gemfile
 require 'rubygems'
-require 'capistrano/laravel'
+# require 'capistrano/laravel'
 
 load 'config/deploy.rb'
 
